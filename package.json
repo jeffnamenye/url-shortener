@@ -1,0 +1,23 @@
+{
+  "name": "url_shortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffnamenye/url-shortener.git"
+  },
+  "author": "Jnamenye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffnamenye/url-shortener/issues"
+  },
+  "homepage": "https://github.com/jeffnamenye/url-shortener#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
