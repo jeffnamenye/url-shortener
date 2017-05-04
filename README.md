@@ -3,7 +3,7 @@ This is a basic Url Shortener type program.
 
 UrlShortener Static API developed by Jeff Namenye
 
-https://github.com/jeffnamenye/UrlShortener/releases/tag/v1.0.0
+https://github.com/jeffnamenye/url-shortener/releases/tag/v1.0.0
 To install follow link to my git repo and click the green clone or download
 button to install on your PC
 
