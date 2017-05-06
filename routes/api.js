@@ -1,16 +1,20 @@
-// link my url generator model
-const est = require('../models/url');
-
-// express as a parameter of express
 module.exports = (express) => {
-
   const router = express.Router();
 
-  // post method
-  router.post('/url', (req, res) =>{
-    //respond with links
-    res.json(est.Url_Short(req.body.link));
+  //This is my route to get hello dude
+  router.get('/', (req, res) => {
+    res.json({ hello: 'dude' });
   });
-  //return the data
+
+  //This is my route to check api status
+  router.get('/status', (req, res) => {
+    res.json({ healty: true });
+  });
+
+  // linking routes
+  router.use('/api/v1.1.0/', require('./api/url')(express));
+  router.use('/api/v1.1.0/', require('./api/user')(express));
+
+  // returns correct data
   return router;
 };
