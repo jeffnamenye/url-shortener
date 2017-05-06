@@ -17,7 +17,7 @@ app.use(body_parser.urlencoded({
 }));
 
 //links routes
-app.use('/api/v1.0.0', require('../routes/api')(express));
+app.use('/api/v1.1.0', require('../routes/api')(express));
 
 // server to listen on port 3000
 const server = app.listen(port, () =>{
