@@ -3,7 +3,7 @@ module.exports = (express) => {
 
   //This is my route to get hello dude
   router.get('/', (req, res) => {
-    res.json({ hello: 'dude' });
+    res.json({ hello: 'Hoity Toity' });
   });
 
   //This is my route to check api status

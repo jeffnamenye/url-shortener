@@ -25,6 +25,12 @@ const user = sequelize.define('user', {
   password: {
     type: Sequelize.STRING,
   },
+  email: {
+    type: Sequelize.STRING,
+  },
+  address: {
+    type: Sequelize.STRING,
+  },
   tokenreq: {
     type: Sequelize.BOOLEAN,
   },

@@ -5,7 +5,7 @@ module.exports = (express) => {
   const router = express.Router();
 
   //This creates the user in my db
-  router.post('/user', (req, res) => {
+  router.post('/users', (req, res) => {
     const rb = req.body;
     // hashes password before create
     rb.password = url.generateHash(rb.password);
@@ -17,7 +17,7 @@ module.exports = (express) => {
   });
 
   //This gets all of the users
-  router.get('/user', (req, res) => {
+  router.get('/users', (req, res) => {
     user.findAll((err) => {
       res.status(500).json(err);
     }, (data) => {
@@ -26,7 +26,7 @@ module.exports = (express) => {
   });
 
   //This gets user by id
-  router.get('/user/:id', (req, res) => {
+  router.get('/users/:id', (req, res) => {
     const rb = req.body;
     rb.id = req.params.id;
     user.find(req.body, (err) => {
@@ -37,7 +37,7 @@ module.exports = (express) => {
   });
 
   //This updates the user in the db
-  router.post('/user/:id', (req, res) => {
+  router.post('/users/:id', (req, res) => {
     const rb = req.body;
     rb.id = req.params.id;
     // hashes new password
@@ -50,7 +50,7 @@ module.exports = (express) => {
   });
 
   //This deletes the user from the db
-  router.delete('/user/:id', (req, res) => {
+  router.delete('/users/:id', (req, res) => {
     const rb = req.body;
     rb.id = req.params.id;
     user.destroy(req.body, (err) => {

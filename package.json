@@ -25,6 +25,7 @@
     "localenvironment": "^1.0.2",
     "mocha": "^3.3.0",
     "mysql": "^2.13.0",
+    "node": "0.0.0",
     "sequelize": "^3.30.4"
   },
   "devDependencies": {
