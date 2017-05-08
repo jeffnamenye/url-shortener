@@ -1,17 +1,17 @@
 const db = require('./db');
-require('dotenv').config();
+
 require('localenvironment');
-// create
+// creates user in DB
 exports.create = (payload, err, success) => {
   db.user.create(payload).then(success).catch(err);
 };
 
-// find all
+// find all users
 exports.findAll = (err, success) => {
   db.user.findAll().then(success).catch(err);
 };
 
-// find by id
+// find user by id
 exports.find = (payload, err, success) => {
   db.user.find({
     where: {
@@ -25,7 +25,7 @@ exports.find = (payload, err, success) => {
   }).then(success).catch(err);
 };
 
-// update
+// updates the user info
 exports.update = (payload, err, success) => {
   db.user.find({
     where: {
@@ -36,7 +36,7 @@ exports.update = (payload, err, success) => {
   }).catch(err);
 };
 
-// delete
+// delete the user
 exports.destroy = (payload, err, success) => {
   db.user.destroy({
     where: {

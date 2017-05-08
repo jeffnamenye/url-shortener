@@ -7,13 +7,14 @@ module.exports = (express) => {
   });
 
   //This is my route to check api status
-  router.get('/status', (req, res) => {
+  router.get('/users', (req, res) => {
     res.json({ healty: true });
   });
 
   // linking routes
-  router.use('/api/v1.1.0/', require('./api/url')(express));
-  router.use('/api/v1.1.0/', require('./api/user')(express));
+  router.use('/api/', require('./api/url')(express));
+  router.use('/api/', require('./api/user')(express));
+  router.use('/api/', require('./api/redirect')(express));
 
   // returns correct data
   return router;

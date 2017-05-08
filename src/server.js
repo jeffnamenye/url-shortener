@@ -17,7 +17,7 @@ app.use(body_parser.urlencoded({
 }));
 
 // links my routes
-app.use('/api/v1.0', require('../routes/index')(express));
+app.use('/', require('../routes/index')(express));
 
 //sets my server to listen on port 3000
 const server = app.listen(port, () => {

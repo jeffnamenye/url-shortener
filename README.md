@@ -18,3 +18,8 @@ Now you need to use "postman"(https://www.getpostman.com/) once thats loaded cha
 "http://hoitytoity.comlTSLj5o" in your results box about middle of the page.
 
 Or if you want to see it work in your browser, you have to to go into Routes then api then on line 10 you should see this **router.post** all you have to do is change *post to get* then type **localhost:3000/api/v1.0.0/url** into your browser window and should see this in your screen "http://hoitytoity.comLFi2uf9"
+
+***UPDATE***
+For this next feature you will need a few more things to download. So you will need mysql, localenvironment, sequelize, bcrypt, bcrypt-nodejs, and mocha. You do that by exmample **npm install mocha --save**
+
+Once that is done, you need to start the servers by nodemon src/server.js and mysql.server start from the command line. Once thats done open postman and 

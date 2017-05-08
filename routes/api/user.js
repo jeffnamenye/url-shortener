@@ -1,14 +1,11 @@
 const user = require('../../models/data/user');
-const gen = require('../../models/url');
+
 
 module.exports = (express) => {
   const router = express.Router();
 
   //This creates the user in my db
   router.post('/users', (req, res) => {
-    const rb = req.body;
-    // hashes password before create
-    rb.password = url.generateHash(rb.password);
     user.create(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
