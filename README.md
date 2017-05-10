@@ -22,4 +22,15 @@ Or if you want to see it work in your browser, you have to to go into Routes the
 ***UPDATE***
 For this next feature you will need a few more things to download. So you will need mysql, localenvironment, sequelize, bcrypt, bcrypt-nodejs, and mocha. You do that by exmample **npm install mocha --save**
 
-Once that is done, you need to start the servers by nodemon src/server.js and mysql.server start from the command line. Once thats done open postman and 
+Once that is done, you need to start the servers by nodemon src/server.js and mysql.server start from the command line. Once thats done open postman and in here change the the first tool bar just below the drop down menu and click body. Then raw and last change the next drop down menu to JSON(application/json).
+In the screen under that tool bar example **{
+	"name": "Jeff",
+	"username": "logen1467",
+	"password": "fered",
+	"email": "abc.com",
+	"address": "1243 linconway"
+}** then hit post
+
+you should see something like this in the bottom section, **{"id":6,"name":"Jeff","username":"logen1467","password":"fered","email":"abc.com","address":"1243 linconway","updatedAt":"2017-05-07T23:47:58.000Z","createdAt":"2017-05-07T23:47:58.000Z"}**
+Now for delete ***localhost:3000/api/users/1**** and switch the post to delete
+Update is down in the same way, address set the same way...change the delete to post agin and with the same formate as above, but with the changes you need and then hit send.
