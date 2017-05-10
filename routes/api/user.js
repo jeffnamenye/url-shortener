@@ -1,5 +1,6 @@
 const user = require('../../models/data/user');
-
+const url = require('../../models/url')
+const utility = require('../../tool/utility');
 
 module.exports = (express) => {
   const router = express.Router();
@@ -8,8 +9,10 @@ module.exports = (express) => {
   router.post('/users', (req, res) => {
     user.create(req.body, (err) => {
       res.status(500).json(err);
+      utility.debug('User created failed', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('User created sucess', 'sucess');
     });
   });
 
@@ -17,8 +20,10 @@ module.exports = (express) => {
   router.get('/users', (req, res) => {
     user.findAll((err) => {
       res.status(500).json(err);
+      utility.debug('Get all users fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('Get all users sucess', 'sucess');
     });
   });
 
@@ -28,8 +33,10 @@ module.exports = (express) => {
     rb.id = req.params.id;
     user.find(req.body, (err) => {
       res.status(500).json(err);
+      utility.debug('Get users by id fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('Get users by id sucess', 'sucess');
     });
   });
 
@@ -37,12 +44,12 @@ module.exports = (express) => {
   router.post('/users/:id', (req, res) => {
     const rb = req.body;
     rb.id = req.params.id;
-    // hashes new password
-    rb.password = url.generateHash(rb.password);
     user.update(req.body, (err) => {
       res.status(500).json(err);
+      utility.debug('Update users fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('Update users sucess', 'sucess');
     });
   });
 
@@ -52,8 +59,10 @@ module.exports = (express) => {
     rb.id = req.params.id;
     user.destroy(req.body, (err) => {
       res.status(500).json(err);
+      utility.debug('Delete users fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('Delete users sucess', 'sucess');
     });
   });
 
