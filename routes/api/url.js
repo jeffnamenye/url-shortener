@@ -1,6 +1,8 @@
 //This links to my generation model
 const gen = require('../../models/data/urlShort');
 const url = require('../../models/url');
+const utility = require('../../tool/utility');
+
 
 //This accepts express as a parameter of express
 module.exports = (express) => {
@@ -14,8 +16,10 @@ module.exports = (express) => {
     rb.shortURL = url.shortURL(url);
     url.create(req.body, (err) => {
       res.status(500).json(err);
+      utility.debug('Url create fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('Url create succes', 'fail');
     });
   });
 
@@ -23,8 +27,10 @@ module.exports = (express) => {
   router.get('/urls', (req, res) => {
     url.findAll((err) => {
       res.status(500).json(err);
+      utility.debug(' Get url fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('Get url succes', 'succes');
     });
   });
 
@@ -34,8 +40,10 @@ module.exports = (express) => {
     rb.id = req.params.id;
     url.find(req.body, (err) => {
       res.status(500).json(err);
+      utility.debug('Url get by id fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('Url get by id succes', 'succes');
     });
   });
 
@@ -45,8 +53,10 @@ module.exports = (express) => {
     rb.id = req.params.id;
     url.update(req.body, (err) => {
       res.status(500).json(err);
+      utility.debug('Update url fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('Update url succes', 'succes');
     });
   });
 
@@ -56,8 +66,10 @@ module.exports = (express) => {
     rb.id = req.params.id;
     url.destroy(req.body, (err) => {
       res.status(500).json(err);
+      utility.debug('Delete url fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
+      utility.debug('Delete url succes', 'succes');
     });
   });
 

@@ -12,7 +12,7 @@ module.exports = (express) => {
       utility.debug('User created failed', 'fail');
     }, (data) => {
       res.status(200).json(data);
-      utility.debug('User created sucess', 'sucess');
+      utility.debug('User created succes', 'succes');
     });
   });
 
@@ -23,7 +23,7 @@ module.exports = (express) => {
       utility.debug('Get all users fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
-      utility.debug('Get all users sucess', 'sucess');
+      utility.debug('Get all users succes', 'succes');
     });
   });
 
@@ -49,7 +49,7 @@ module.exports = (express) => {
       utility.debug('Update users fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
-      utility.debug('Update users sucess', 'sucess');
+      utility.debug('Update users succes', 'succes');
     });
   });
 
@@ -62,7 +62,7 @@ module.exports = (express) => {
       utility.debug('Delete users fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
-      utility.debug('Delete users sucess', 'sucess');
+      utility.debug('Delete users succes', 'succes');
     });
   });
 
