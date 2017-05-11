@@ -1,6 +1,8 @@
 // my url generator module
 const bcrypt = require('bcrypt-nodejs');
+const utility = require('../tool/utility');
 require('dotenv').config();
+
 //This sets up my generate module
 exports.shortURL = () => {
   // string of letters
@@ -11,12 +13,14 @@ exports.shortURL = () => {
   for (let i = 0; i < 5; i++) {
     URLId += string.charAt(Math.floor(Math.random() * string.length));
   }
+  utility.debug('Creates short url');
   return URLId;
 };
 
 // generates a hash of the users password with salt which helps encrypt it.
 exports.generateHash = (payload) => {
   const hash = bcrypt.hashSync(payload, bcrypt.genSaltSync(8));
+  utility.debug('Creates a hashed password');
   //This returns hashed password
   return hash;
 };
@@ -25,5 +29,8 @@ exports.generateHash = (payload) => {
 exports.validateHash = (payload) => {
   //This compares my password and returns in BOOLEAN
   const hash = bcrypt.compareSync(payload.password, this.localpassword);
+utility.debug('Compares the hashed password');
   return hash;
+
+
 };
