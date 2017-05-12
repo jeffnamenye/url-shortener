@@ -31,7 +31,7 @@ exports.debug = (data, status) => {
       console.log(out2);
       // If the status is undefined
     } else {
-      const out3 = seperator + '\n \n' + colors.magenta(data) + '\n \n';
+      const out3 = seperator + '\n \n' + colors.blue(data) + '\n \n';
       fs.appendFile('./error.log', out3, (err) => {
         if (err) throw err;
         console.log('log updated sucessfully');

@@ -1,36 +1,35 @@
 # UrlShortener by Jeff Namenye
-This is a basic Url Shortener type program.
 
-UrlShortener Static API developed by Jeff Namenye
+This is basic URL shortener application, there are a few things you
+to install. You can do that by **npm i**, that should install everything
+in the package.json.
 
-https://github.com/jeffnamenye/url-shortener/releases/tag/v1.0.0
-To install follow link to my git repo and click the green clone or download
-button to install on your PC
+Next you need to create a .env file in your root directory. Inside of that
+you need to add a few things.
+DB_NAME=dbname
+DB_USER=dbname
+DB_PASS=dbpass
+DB_HOST=127.0.0.1
+DB_SCHEMA=mysql
+DB_PORT=3306
+Just copy and paste that into your .env file.
 
-If you don't already have them installed you will need **Node and NPM** you can do that through brew or through their web sites [Node.js(https://nodejs.org/en/)and NPM((https://www.npmjs.com))]
+To start the server use **node src/server** that will start the server normally. To start the server in debugging mode **DEBUG = true node src/server**
 
-In your command line change your directory to **UrlShortener** and then **brew install npm**  this should install all dependencies in the **package.json** file into your directory. You will also need read my package.json and see if there is any thing else you may need to install on your machine. For that here is an example **npm install mocha**
+To create urls, in post man add the following code into address bar however your hooking up to your data base.
+For the user  
+*To create* in post man type POST localhost:3000/api/v1/users
+ and in the body part type this and what ever you want into the fields.
 
-Still in your command line type and still in your directory UrlShortener type
-**node src/server** it should say 'Good to go on port 300'.👍
+{
+ "name" : " ",
+ "username" : " ",
+ "password" : " ",
+ "email" : " ",
+ "address" : " ",
+}
 
-Now you need to use "postman"(https://www.getpostman.com/) once thats loaded change your drop down arrow next to the search style bar, change it to get and than type in **localhost:3000/api/v1.0.0/url** inside of your search style bar and hit send. You should see something like this
-"http://hoitytoity.comlTSLj5o" in your results box about middle of the page.
-
-Or if you want to see it work in your browser, you have to to go into Routes then api then on line 10 you should see this **router.post** all you have to do is change *post to get* then type **localhost:3000/api/v1.0.0/url** into your browser window and should see this in your screen "http://hoitytoity.comLFi2uf9"
-
-***UPDATE***
-For this next feature you will need a few more things to download. So you will need mysql, localenvironment, sequelize, bcrypt, bcrypt-nodejs, and mocha. You do that by exmample **npm install mocha --save**
-
-Once that is done, you need to start the servers by nodemon src/server.js and mysql.server start from the command line. Once thats done open postman and in here change the the first tool bar just below the drop down menu and click body. Then raw and last change the next drop down menu to JSON(application/json).
-In the screen under that tool bar example **{
-	"name": "Jeff",
-	"username": "logen1467",
-	"password": "fered",
-	"email": "abc.com",
-	"address": "1243 linconway"
-}** then hit post
-
-you should see something like this in the bottom section, **{"id":6,"name":"Jeff","username":"logen1467","password":"fered","email":"abc.com","address":"1243 linconway","updatedAt":"2017-05-07T23:47:58.000Z","createdAt":"2017-05-07T23:47:58.000Z"}**
-Now for delete ***localhost:3000/api/users/1**** and switch the post to delete
-Update is down in the same way, address set the same way...change the delete to post agin and with the same formate as above, but with the changes you need and then hit send.
+*To read the users* change it to GET  localhost:3000/api/v1/users
+*To read users by id* change it to GET  localhost:3000/api/v1/users/:id
+*To update the users* change it to POST  localhost:3000/api/v1/users/:id
+*To delete the users* change it to DELETE  localhost:3000/api/v1/users:id
