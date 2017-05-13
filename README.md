@@ -16,6 +16,8 @@ Just copy and paste that into your .env file.
 
 To start the server use **node src/server** that will start the server normally. To start the server in debugging mode **DEBUG = true node src/server**
 
+To start the mysql sever you use **mysql.server start**
+
 To create urls, in post man add the following code into address bar however your hooking up to your data base.
 For the user  
 *To create* in post man type POST localhost:3000/api/v1/users
