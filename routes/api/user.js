@@ -7,7 +7,7 @@ module.exports = (express) => {
 
   //This creates the user in my db
   router.post('/users', (req, res) => {
-    const rb = reg.body;
+    
     user.create(req.body, (err) => {
       res.status(500).json(err);
       utility.debug('User created failed', 'fail');

@@ -1,4 +1,4 @@
-onst expect = require('chai').expect;
+const expect = require('chai').expect;
 const Url = require('../models/data/urlShort');
 
 describe('url model', () => {
