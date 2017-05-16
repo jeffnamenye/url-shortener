@@ -16,6 +16,41 @@ Just copy and paste that into your .env file.
 
 To start the server use **node src/server** that will start the server normally. To start the server in debugging mode **DEBUG = true node src/server**
 
+To run the unit test **server must be off** to run the test, in the command prompt type *mocha* then you should see something like this.
+url model
+   ✓ Create url
+   ✓ Read all urls
+   ✓ Read url by id
+   ✓ Redirect
+   ✓ Update url
+   ✓ Delete url
+
+ user model
+   ✓ Create user
+   ✓ Read all users
+   ✓ Read user by id
+   ✓ Update user
+   ✓ Delete user
+
+ routes
+   ✓ Index
+   ✓ status
+   ✓ Create a short url
+   ✓ Read all urls
+   ✓ Read url by id
+   ✓ Redirect url by
+   ✓ update a url
+   ✓ delete a url
+   ✓ Create a user
+   ✓ Read all users
+   ✓ Read a user by id
+   ✓ Update a user
+   ✓ Delete a user
+
+
+ 24 passing (272ms)
+
+
 To start the mysql sever you use **mysql.server start**
 
 To create urls, in post man add the following code into address bar however your hooking up to your data base.
