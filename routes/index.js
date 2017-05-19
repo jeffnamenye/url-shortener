@@ -9,7 +9,7 @@ const router = express.Router();
   });
 
   //This is my route to check api status
-  router.get('/users', (req, res) => {
+  router.get('/status', (req, res) => {
     res.json({ healty: true });
     utility.debug('status hit', 'sucess')
 
