@@ -10,10 +10,10 @@ module.exports = (express) => {
     rb.shortURL = req.params.shortURL;
     url.redirect(req.body, (err) => {
       res.status(500).json(err);
-      utility.debug('Url redirect fail', 'fail');
+      reddragon.debug('Url redirect fail', 'fail');
     }, (data) => {
       res.status(200).redirect(data);
-      utility.debug('Url redirect succes', 'succes')
+      reddragon.debug('Url redirect succes', 'succes')
     });
   });
 

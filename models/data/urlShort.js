@@ -4,13 +4,13 @@ require('dotenv').config();
 // This creates the urls in the db
 exports.create = (payload, err, success) => {
   db.url.create(payload).then(success).catch(err);
-  utility.debug('Creates the url');
+  reddragon.debug('Creates the url');
 };
 
 //This finds all the urls in my db
 exports.findAll = (err, success) => {
   db.url.findAll().then(success).catch(err);
-  utility.debug('Reads the url');
+  reddragon.debug('Reads the url');
 };
 
 //This finds the urls by id
@@ -25,7 +25,7 @@ exports.find = (payload, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
-    utility.debug('Reads the url by id');
+    reddragon.debug('Reads the url by id');
 };
 
 // redirect
@@ -36,7 +36,7 @@ exports.go = (payload, err, success) => {
       shortURL: payload.shortURL,
     },
   }).then(success).catch(err);
-  utility.debug('Redirects the url ');
+  reddragon.debug('Redirects the url ');
 };
 
 //This updates my db
@@ -48,7 +48,7 @@ exports.update = (payload, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
-  utility.debug('Updates the url');
+  reddragon.debug('Updates the url');
 };
 
 //This deletes the urls in the db
@@ -58,5 +58,5 @@ exports.destroy = (payload, err, success) => {
       id: payload.id,
     },
   }).then(success).catch(err);
-  utility.debug('Deletes the url');
+  reddragon.debug('Deletes the url');
 };

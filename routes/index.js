@@ -5,13 +5,13 @@ const router = express.Router();
   //This is my route to get hello dude
   router.get('/', (req, res) => {
     res.json({ hello: 'Hoity Toity' });
-    utility.debug('index hit', 'sucess');
+    reddragon.debug('index hit', 'sucess');
   });
 
   //This is my route to check api status
   router.get('/status', (req, res) => {
     res.json({ healty: true });
-    utility.debug('status hit', 'sucess')
+    reddragon.debug('status hit', 'sucess')
 
   });
 

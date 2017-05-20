@@ -53,7 +53,7 @@ describe('url model', () => {
   });
   it('Delete url', (done) => {
     Url.destroy(testUrl, (fail) => {
-    
+
   //  callback
   }, (res) => {
     expect(res).to.be.equal(1);

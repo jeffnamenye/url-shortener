@@ -15,7 +15,7 @@ describe('user model', () => {
 
   it('Create users', (done) => {
     User.create(testUser, (fail) => {
-      utility.debug('failed to create mock user', fail);
+      reddragon.debug('failed to create mock user', fail);
     }, (user) => {
       testId = user.id;
       expect(user.name).to.be.equal(testUser.name);
@@ -29,7 +29,7 @@ describe('user model', () => {
   });
   it('Read all my users', (done) => {
     User.findAll((fail) => {
-      utility.debug('failed to read my user', fail);
+      reddragon.debug('failed to read my user', fail);
     // sucess callback
     }, (users) => {
       this.testUsers = users;
@@ -50,7 +50,7 @@ describe('user model', () => {
     };
     // update user method
     User.update(testUser, (fail) => {
-      utility.debug('failed to delete fake user', fail);
+      reddragon.debug('failed to delete fake user', fail);
     // sucess callback
     }, (user) => {
       expect(user.dataValues.name).to.be.equal(testUser.name);
@@ -60,7 +60,7 @@ describe('user model', () => {
   });
   it('Delete user', (done) => {
     User.destroy(testUser, (fail) => {
-      utility.debug('failed to delete fake user', fail);
+      reddragon.debug('failed to delete fake user', fail);
     // sucess callback
     }, (res) => {
       expect(res).to.be.equal(1);

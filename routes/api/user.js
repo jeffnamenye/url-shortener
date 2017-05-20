@@ -7,13 +7,13 @@ module.exports = (express) => {
 
   //This creates the user in my db
   router.post('/users', (req, res) => {
-    
+
     user.create(req.body, (err) => {
       res.status(500).json(err);
-      utility.debug('User created failed', 'fail');
+    reddragon.debug('User created failed', 'fail');
     }, (data) => {
       res.status(200).json(data);
-      utility.debug('User created succes', 'succes');
+      reddragon.debug('User created succes', 'succes');
     });
   });
 
@@ -21,10 +21,10 @@ module.exports = (express) => {
   router.get('/users', (req, res) => {
     user.findAll((err) => {
       res.status(500).json(err);
-      utility.debug('Get all users fail', 'fail');
+      reddragon.debug('Get all users fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
-      utility.debug('Get all users succes', 'succes');
+      reddragon.debug('Get all users succes', 'succes');
     });
   });
 
@@ -34,10 +34,10 @@ module.exports = (express) => {
     rb.id = req.params.id;
     user.find(req.body, (err) => {
       res.status(500).json(err);
-      utility.debug('Get users by id fail', 'fail');
+      reddragon.debug('Get users by id fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
-      utility.debug('Get users by id sucess', 'sucess');
+      reddragon.debug('Get users by id sucess', 'sucess');
     });
   });
 
@@ -47,10 +47,10 @@ module.exports = (express) => {
     rb.id = req.params.id;
     user.update(req.body, (err) => {
       res.status(500).json(err);
-      utility.debug('Update users fail', 'fail');
+      reddragon.debug('Update users fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
-      utility.debug('Update users succes', 'succes');
+      reddragon.debug('Update users succes', 'succes');
     });
   });
 
@@ -60,10 +60,10 @@ module.exports = (express) => {
     rb.id = req.params.id;
     user.destroy(req.body, (err) => {
       res.status(500).json(err);
-      utility.debug('Delete users fail', 'fail');
+      reddragon.debug('Delete users fail', 'fail');
     }, (data) => {
       res.status(200).json(data);
-      utility.debug('Delete users succes', 'succes');
+      reddragon.debug('Delete users succes', 'succes');
     });
   });
 
