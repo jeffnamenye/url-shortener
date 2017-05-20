@@ -1,5 +1,5 @@
 const url = require('../../models/url');
-const utility = require('../../tool/utility');
+const reddragon = require('reddragon');
 
 module.exports = (express) => {
   const router = express.Router();

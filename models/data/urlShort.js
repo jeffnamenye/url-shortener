@@ -1,21 +1,21 @@
 const db = require('./db');
-const utility = require('../../tool/utility');
+const reddragon = require('reddragon');
 require('dotenv').config();
 // This creates the urls in the db
 exports.create = (payload, err, success) => {
-  db.url.create(payload).then(success).catch(err);
+  db.urlShort.create(payload).then(success).catch(err);
   reddragon.debug('Creates the url');
 };
 
 //This finds all the urls in my db
 exports.findAll = (err, success) => {
-  db.url.findAll().then(success).catch(err);
+  db.urlShort.findAll().then(success).catch(err);
   reddragon.debug('Reads the url');
 };
 
 //This finds the urls by id
 exports.find = (payload, err, success) => {
-  db.url.find({
+  db.urlShort.find({
     where: {
       id: payload.id,
     },
@@ -31,7 +31,7 @@ exports.find = (payload, err, success) => {
 // redirect
 exports.go = (payload, err, success) => {
   // finds where shortURL is same as payload
-  db.url.find({
+  db.urlShort.find({
     where: {
       shortURL: payload.shortURL,
     },
@@ -41,7 +41,7 @@ exports.go = (payload, err, success) => {
 
 //This updates my db
 exports.update = (payload, err, success) => {
-  db.url.find({
+  db.urlShort.find({
     where: {
       id: payload.id,
     },
@@ -53,7 +53,7 @@ exports.update = (payload, err, success) => {
 
 //This deletes the urls in the db
 exports.destroy = (payload, err, success) => {
-  db.url.destroy({
+  db.urlShort.destroy({
     where: {
       id: payload.id,
     },

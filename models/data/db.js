@@ -51,4 +51,4 @@ sequelize.sync();
 
 exports.sequelize = sequelize;
 exports.user = user;
-exports.url = url;
+exports.urlShort = url;

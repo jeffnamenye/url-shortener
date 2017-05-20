@@ -1,13 +1,13 @@
 const expect = require('chai').expect;
 const Url = require('../models/data/urlShort');
 const url = require('../models/url');
-const util = require('../tool/utility');
+const reddragon = require('reddragon');
 
 
 describe('url model', () => {
   let testUrl ={
     url: 'http://www.msn.com',
-    urlShort: url.shortURL('http://www.msn.com'),
+    shortURL: url.shortURL('http://www.msn.com'),
   };
   let testId;
   let urlShort;
@@ -45,7 +45,7 @@ describe('url model', () => {
     Url.update(testUrl, (fail) => {
 
     // callback
-    }, (url) => {
+  }, (urls) => {
       expect(url.dataValues.url).to.be.equal(testUrl.url);
       done();
     }

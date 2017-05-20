@@ -1,7 +1,7 @@
 //this sets contant for express and body-parser
 const express = require('express');
 const body_parser = require('body-parser');
-const utility = require('../tool/utility');
+const reddragon = require('reddragon');
 // sets up the express functionality
 const app = express();
 
@@ -21,6 +21,6 @@ app.use('/', require('../routes/index')(express));
 
 //sets my server to listen on port 3000
 const server = app.listen(port, () => {
-  utility.debug('Good to go on ' + port);
+  reddragon.debug('Good to go on ' + port);
 });
 module.exports = server;

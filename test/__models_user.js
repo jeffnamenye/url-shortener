@@ -1,9 +1,12 @@
 const expect = require('chai').expect;
 const User = require('../models/data/user');
-const utility = require('../tool/utility')
+const reddragon = require('reddragon')
+
+let testID;
+
 describe('user model', () => {
 
-    let testUser = {
+   let testUser = {
     name: 'jeff',
     username: 'logen1467',
     password: 'password',

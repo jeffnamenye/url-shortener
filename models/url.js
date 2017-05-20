@@ -1,6 +1,6 @@
 // my url generator module
 const bcrypt = require('bcrypt-nodejs');
-const utility = require('../tool/utility');
+const reddragon = require('reddragon');
 require('dotenv').config();
 
 //This sets up my generate module

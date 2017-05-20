@@ -1,5 +1,5 @@
 const db = require('./db');
-const utility = require('../../tool/utility');
+const reddragon = require('reddragon');
 require('localenvironment');
 // creates user in DB
 exports.create = (payload, err, success) => {

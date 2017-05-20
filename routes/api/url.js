@@ -1,7 +1,7 @@
 //This links to my generation model
 const gen = require('../../models/data/urlShort');
 const url = require('../../models/url');
-const utility = require('../../tool/utility');
+const reddragon = require('reddragon');
 
 
 //This accepts express as a parameter of express
